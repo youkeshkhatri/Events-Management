@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Events_Management</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Events_Management.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class=" mx-5 navbar-brand text-white bg-dark" href="home.aspx">Dream Events</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" style="padding-left:55%">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white bg-dark" href="/services.html" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                            <li>
+                                <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Home" asp-action="photographer">Photographer Hire For Events</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Home" asp-action="graphicdesigning">Graphic Designing and Photoshop</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Home" asp-action="Themesandlocation">Location And Theme Selection</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Events" asp-action="Create">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white bg-dark" asp-area="" asp-controller="Events" asp-action="Index">Events</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown mx-4 mt-1">
+                        <a class="nav-link text-white bg-dark fas fa-user-alt" data-bs-toggle="dropdown" >
+                           
+                        </a>
+                        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                            <li class="nav-item" style="margin-right:20px;">
+                                <partial name="_LoginPartial" />
+                            </li>
+                        </ul>
+                    </li>
+
+                   
+                </ul>
+            </div>
+        </nav>
+        
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center text-white" style="background-color: #caced1;">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">EventsManagement.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
